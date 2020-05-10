@@ -7,32 +7,36 @@ namespace C__weekend_Assignment
     {
         static void Main(string[] args)
         {
-
+            int option = 0;
             Console.WriteLine("Prompt: Please Enter a File Name:");
             string fileName = Console.ReadLine();
+            while (option <3) {
+                option++;
+            if (option == 1) {
             File.WriteAllText(fileName, "this is your new file");
             Console.WriteLine("your file name: " + fileName);
-
-
+            }
+        if (option == 2) {
             Console.WriteLine("Enter a string:");
             string myString = Console.ReadLine();
 
             string[] myStringArray = myString.Split(" ");
-            foreach (string element in myStringArray)
+            for (int pos = 0; pos < myStringArray.Length; pos++)
             {
-                File.WriteAllText(fileName, element);
-                Console.WriteLine(element);
+                File.WriteAllText(fileName, myStringArray[pos]);
+                Console.WriteLine(myStringArray[pos]);
 
             }
+        }
+      }
+          
+             if (option == 3)
+            {
+                Console.WriteLine("Program is Terminated");
 
-            int option = 1;
-            do {
-              option++;
-            } 
+                return;
 
-            while (option <= 3);      
-            Console.WriteLine("Terminated"); 
-             
+            }
         }
     }
 }
